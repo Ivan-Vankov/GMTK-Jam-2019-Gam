@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Weapon
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Wall
   - 
   - 
   - 
@@ -40,4 +41,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Enemy
+    uniqueID: 2578921261
+    locked: 0
+  - name: Player
+    uniqueID: 820557113
+    locked: 0
+  - name: Slash Effect
+    uniqueID: 3908225407
+    locked: 0
+  - name: Weapon
+    uniqueID: 4079984795
+    locked: 0
+  - name: Foreground
+    uniqueID: 2796771599
     locked: 0
