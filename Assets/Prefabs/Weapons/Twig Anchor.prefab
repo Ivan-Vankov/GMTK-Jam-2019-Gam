@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &7213084768378937223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2394979353155261882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52daa651679a6034a88ed06f9408dd1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponUp: {fileID: 0}
+  weaponUpRight: {fileID: 0}
+  weaponRight: {fileID: 0}
+  weaponDownRight: {fileID: 0}
+  weaponDown: {fileID: 0}
+  weaponDownLeft: {fileID: 0}
+  weaponLeft: {fileID: 0}
+  weaponUpLeft: {fileID: 0}
+  attackKey: 323
+  maxCooldown: 2
+  useIndividualSprites: 0
+  holder: {fileID: 0}
+  isInReserve: 0
+  cooldown: 0
+--- !u!1001 &4712813987362767800
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6943400889712825858, guid: ee83d0d5620e20a4fa986328fbdca236,
+        type: 3}
+      propertyPath: m_Name
+      value: Twig Anchor
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943400889712825884, guid: ee83d0d5620e20a4fa986328fbdca236,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943400889712825884, guid: ee83d0d5620e20a4fa986328fbdca236,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943400889712825884, guid: ee83d0d5620e20a4fa986328fbdca236,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943400889712825884, guid: ee83d0d5620e20a4fa986328fbdca236,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943400889712825884, guid: ee83d0d5620e20a4fa986328fbdca236,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943400889712825884, guid: ee83d0d5620e20a4fa986328fbdca236,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943400889712825884, guid: ee83d0d5620e20a4fa986328fbdca236,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943400889712825884, guid: ee83d0d5620e20a4fa986328fbdca236,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943400889712825884, guid: ee83d0d5620e20a4fa986328fbdca236,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943400889712825884, guid: ee83d0d5620e20a4fa986328fbdca236,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943400889712825884, guid: ee83d0d5620e20a4fa986328fbdca236,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7771521905926427828, guid: ee83d0d5620e20a4fa986328fbdca236,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7771521905926427826, guid: ee83d0d5620e20a4fa986328fbdca236,
+        type: 3}
+      propertyPath: m_Name
+      value: Twig
+      objectReference: {fileID: 0}
+    - target: {fileID: 7771521905926427827, guid: ee83d0d5620e20a4fa986328fbdca236,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3f6cf707063c1814e88d70a766df216b,
+        type: 3}
+    m_RemovedComponents:
+    - {fileID: 7285125432865815154, guid: ee83d0d5620e20a4fa986328fbdca236, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: ee83d0d5620e20a4fa986328fbdca236, type: 3}
+--- !u!1 &2394979353155261882 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6943400889712825858, guid: ee83d0d5620e20a4fa986328fbdca236,
+    type: 3}
+  m_PrefabInstance: {fileID: 4712813987362767800}
+  m_PrefabAsset: {fileID: 0}

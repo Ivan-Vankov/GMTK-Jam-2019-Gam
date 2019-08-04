@@ -71,7 +71,9 @@ Shader "Custom/Player"
 				fixed4 frag(v2f IN) : SV_Target
 				{
 					fixed4 c = tex2D(_MainTex, IN.texcoord);
-					return tex2D(_PaletteTex, float2(c.r, _PaletteIdx / 7)) * c.a;
+					fixed4 tex = tex2D(_PaletteTex, float2(c.r, _PaletteIdx / 7));
+					tex.a = c.a * 1.2;
+					return tex;
 				}
 			ENDCG
 			}

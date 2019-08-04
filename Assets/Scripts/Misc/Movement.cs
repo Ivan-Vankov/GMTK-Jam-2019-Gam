@@ -7,49 +7,83 @@ public class Movement : MonoBehaviour{
 
 	[SerializeField] protected Animator animator;
 
-	[SerializeField] protected float moveSpeed = 5f;
+	[SerializeField] protected float moveSpeed = 4f;
 
-	[SerializeField] private Transform weaponAnchor;
+	protected Rigidbody2D body;
 
-	private Rigidbody2D body;
+	protected bool isFacingLeft  = false;
+	protected bool isFacingDown  = true;
+	protected bool isFacingRight = false;
+	protected bool isFacingUp    = false;
 
-	//private float originalScaleX;
+    [HideInInspector]
+    public float iFrames = 0;
 
-	protected void MovementSetup() {
+	protected bool isStunned = false;
+
+    public void LateUpdate()
+    {
+        if (iFrames <= 0) return;
+        iFrames -= Time.deltaTime;
+    }
+
+    public void Hurt(){
+        gameObject.SetActive(false);
+        if (gameObject.tag == "Player") {
+            GameManager.instance.GameOver();
+        }
+    }
+
+    protected void MovementSetup() {
 		animator = GetComponent<Animator>();
 		body = GetComponent<Rigidbody2D>();
-		//originalScaleX = transform.localScale.x;
 	}
 
 	protected void Move(float horizontalMovement, float verticalMovement) {
 		Vector2 movePosition = transform.position;
 
+        if (Abs(horizontalMovement) + Abs(verticalMovement) > 1) {
+            horizontalMovement *= 0.7f;
+            verticalMovement *= 0.7f;
+        }
+
 		if (horizontalMovement != 0) {
 			movePosition.x += horizontalMovement * moveSpeed * Time.deltaTime;
 			animator.SetInteger("HorizontalSpeed", (int)Sign(horizontalMovement));
 			animator.SetInteger("VerticalSpeed", 0);
-			//Vector3 newScale = transform.localScale;
-			//if (horizontalMovement > 0) {
-			//	newScale.x = originalScaleX;
-			//} else {
-			//	newScale.x = -originalScaleX;
-			//}
-			//transform.localScale = newScale;
 
+			if (horizontalMovement > 0) {
+				isFacingRight = true;
+				isFacingLeft = false;
+			} else {
+				isFacingLeft = true;
+				isFacingRight = false;
+			}
+			isFacingUp = false;
+			isFacingDown = false;
 		}
-		else if (verticalMovement != 0) {
+		if (verticalMovement != 0) {
 			movePosition.y += verticalMovement * moveSpeed * Time.deltaTime;
 			animator.SetInteger("HorizontalSpeed", 0);
 			animator.SetInteger("VerticalSpeed", (int)Sign(verticalMovement));
+
+			if (verticalMovement > 0) {
+				isFacingUp = true;
+				isFacingDown = false;
+			}
+			else {
+				isFacingDown = true;
+				isFacingUp = false;
+			}
+			isFacingLeft = false;
+			isFacingRight = false;
 		}
-		else {
+
+		if (horizontalMovement == 0 && verticalMovement == 0) {
 			animator.SetInteger("HorizontalSpeed", 0);
 			animator.SetInteger("VerticalSpeed", 0);
 		}
-		body.MovePosition(movePosition);
 
-		if (weaponAnchor != null) {
-			weaponAnchor.position = transform.position;
-		}
+		body.MovePosition(movePosition);
 	}
 }
